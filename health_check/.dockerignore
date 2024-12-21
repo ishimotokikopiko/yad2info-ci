@@ -1,0 +1,11 @@
+.git
+.vscode
+.gitignore
+.env
+.python-version
+Makefile
+Dockerfile
+README.md
+
+helm-fastapi
+__pycache__/*
