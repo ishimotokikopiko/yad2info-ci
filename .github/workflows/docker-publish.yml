@@ -35,9 +35,9 @@ jobs:
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v4
       with:
-        context: .
+        context: ./health_check
         push: true
-        file: ./health_check/Dockerfile
+        #file: Dockerfile
         tags: |
           yadyedida/health-check:latest
           yadyedida/health-check:${{ github.ref_name }}
