@@ -37,6 +37,7 @@ jobs:
       with:
         context: .
         push: true
+        file: ./health_check/Dockerfile
         tags: |
           yadyedida/health-check:latest
           yadyedida/health-check:${{ github.ref_name }}
