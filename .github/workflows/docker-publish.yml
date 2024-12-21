@@ -41,7 +41,6 @@ jobs:
       with:
         context: ./health_check
         push: true
-        #file: Dockerfile
         tags: |
           ${REPO_NAME}/${IMAGE_NAME}:latest
-          ${REPO_NAME}/${IMAGE_NAME}:${{ github.ref_name }}_${{ github.sha::0:7 }}
+          ${REPO_NAME}/${IMAGE_NAME}:${{ github.ref_name }}_${{ github.sha }}
