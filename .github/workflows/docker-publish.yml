@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - main
-    paths:
-      - ./.github/workflows/docker-publish.yml
-      - ./health_check/Dockerfile
-      - ./health_check/*.py
-      - ./health_check/poetry.lock
+    # paths:
+    #   - ./.github/workflows/docker-publish.yml
+    #   - ./health_check/Dockerfile
+    #   - ./health_check/*.py
+    #   - ./health_check/poetry.lock
 
 jobs:
   build-and-push:
