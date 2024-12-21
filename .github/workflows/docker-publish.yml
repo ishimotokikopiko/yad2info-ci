@@ -36,9 +36,9 @@ jobs:
         context: .
         push: true
         tags: |
-          your-dockerhub-username/your-image-name:latest
-          your-dockerhub-username/your-image-name:${{ github.ref_name }}
+          yadyedida/health-check:latest
+          yadyedida/health-check:${{ github.ref_name }}
 
     # Optional: Step 5: Log the pushed images
-    - name: Show pushed images
-      run: echo "Pushed images with tags: latest and ${{ github.ref_name }}"
+    #- name: Show pushed images
+     # run: echo "Pushed images with tags: latest and ${{ github.ref_name }}"
