@@ -15,6 +15,7 @@ def health_check(cpu_threshold: int, ram_threshold: int, disk_threshold: int) ->
     Returns:
         dict: Health check result with status and actual metrics.
     """
+    
     # Get system usage stats
     cpu_usage = psutil.cpu_percent(interval=1)
     ram_usage = psutil.virtual_memory().percent
