@@ -5,6 +5,7 @@ RUN apk add gcc python3-dev musl-dev linux-headers --no-cach
 COPY pyproject.toml poetry.lock /app/
 RUN pip install poetry && poetry config virtualenvs.create false && poetry install --no-dev
 
+
 # Stage 2
 FROM base AS builder
 COPY . /app
