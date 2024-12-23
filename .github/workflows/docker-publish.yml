@@ -12,7 +12,7 @@ on:
 
 env:
   REPO_NAME: yad2info
-  IMAGE_NAME: health_check
+  IMAGE_NAME: health-check
 
 jobs:
   build-and-push:
