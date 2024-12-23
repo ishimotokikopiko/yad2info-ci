@@ -11,7 +11,7 @@ on:
     #   - ./health_check/poetry.lock
 
 env:
-  REPO_NAME: yad2info
+  REPO_NAME: yadyedida
   IMAGE_NAME: health-check
 
 jobs:
