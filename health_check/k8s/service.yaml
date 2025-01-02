@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: health-check-service
+spec:
+  selector:
+    app: health-check
+  ports:
+    - protocol: TCP
+      port: 8080       # Port inside the cluster
+      targetPort: 8080 # Port on the container
+      nodePort: 30080  # Port exposed on Minikube host (adjust as needed)
+  type: NodePort       # Exposes the service externally on Minikube

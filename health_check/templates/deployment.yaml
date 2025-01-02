@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-fastapi
+  name: {{ .Release.Name }}-health-check
   labels:
     app: {{ .Chart.Name }}
     release: {{ .Release.Name }}
@@ -19,7 +19,7 @@ spec:
         release: {{ .Release.Name }}
     spec:
       containers:
-      - name: fastapi
+      - name: health-check
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
@@ -33,4 +33,3 @@ spec:
             cpu: {{ .Values.resources.limits.cpu }}
       nodeSelector: {{ .Values.nodeSelector }}
       tolerations: {{ .Values.tolerations }}
-      affinity: {{ .Values.affinity }}

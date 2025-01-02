@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: your-dockerhub-username/fastapi-healthcheck
+  repository: yadyedida/health-check
   tag: latest
   pullPolicy: IfNotPresent
 
