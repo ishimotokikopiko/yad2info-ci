@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: "health-check: Build Tag Push"
 
 on:
   push:
@@ -26,12 +26,12 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    # Step 3: Set up Docker Buildx (optional, but recommended for advanced builds)
+    # Step 3: Set up Docker Buildx (optional, but recommended for advanced builds X86/ARM)
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
     # Step 4: Build, tag, and push the Docker image
-    - name: Build and Push Docker Image
+    - name: "health-check: Build Tag Push"
       uses: docker/build-push-action@v4
       with:
         context: ./${{ env.IMAGE_NAME }}
