@@ -4,11 +4,6 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - ./.github/workflows/docker-publish.yml
-    #   - ./health_check/Dockerfile
-    #   - ./health_check/*.py
-    #   - ./health_check/poetry.lock
 
 env:
   REPO_NAME: yadyedida
@@ -39,8 +34,9 @@ jobs:
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v4
       with:
-        context: ./health_check
+        context: ./${{ env.IMAGE_NAME }}
         push: true
         tags: |
           ${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:latest
-          ${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.ref_name }}_${{ github.sha }}
+          ${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.ref_name }}
+          #${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.ref_name }}_${{ github.sha }}
