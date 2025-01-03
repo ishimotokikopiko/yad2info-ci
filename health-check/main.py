@@ -15,7 +15,6 @@ def health_check(cpu_threshold: int, ram_threshold: int, disk_threshold: int) ->
     Returns:
         dict: Health check result with status and actual metrics.
     """
-    
     # Get system usage stats
     cpu_usage = psutil.cpu_percent(interval=1)
     ram_usage = psutil.virtual_memory().percent
@@ -41,7 +40,7 @@ def health_check(cpu_threshold: int, ram_threshold: int, disk_threshold: int) ->
     }
 
 @app.get("/health_check")
-def get_health_check(cpu_threshold: int = 80, ram_threshold: int = 80, disk_threshold: int = 80):
+async def get_health_check(cpu_threshold: int = 80, ram_threshold: int = 80, disk_threshold: int = 80):
     """
     Health check endpoint.
 
@@ -56,6 +55,13 @@ def get_health_check(cpu_threshold: int = 80, ram_threshold: int = 80, disk_thre
     return health_check(cpu_threshold, ram_threshold, disk_threshold)
 
 @app.get("/")
-def read_root():
-    return {"message": "Hello health_check!"}
+async def startup_probe():
+    return {"message": "Hello health-check startup_probe!"}
 
+@app.get("/readiness")
+async def readiness_probe():
+    return {"message": "Hello health-check readiness_probe!"}
+
+@app.get("/liveness")
+async def liveness_probe():
+    return {"message": "Hello health-check liveness_probe!"}
