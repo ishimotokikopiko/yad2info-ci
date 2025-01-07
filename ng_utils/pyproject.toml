@@ -1,8 +1,13 @@
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[project]
+[tool.poetry]
 name = "ng_utils"
 version = "0.1.0"
-dependencies = []
+description = "A utility package"
+authors = ["Author <author@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+# Add any other dependencies here
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
