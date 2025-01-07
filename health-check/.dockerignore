@@ -2,6 +2,7 @@
 .vscode
 .gitignore
 .env
+.venv
 .python-version
 Makefile
 Dockerfile
