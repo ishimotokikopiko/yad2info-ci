@@ -1,22 +1,13 @@
-from fastapi import FastAPI
-import psutil
-
-app = FastAPI()
-import logging
 from typing import Dict, Any, Optional
+from datetime import datetime
+import psutil
+from fastapi import FastAPI HTTPException, status
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure, OperationFailure
+import ng_utils.logger
+app = FastAPI()
 
-##########################################
-# Configure logging.
-##########################################
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
 
-logger = logging.getLogger('mongodb_operations')
 
 
 ##########################################
@@ -202,11 +193,6 @@ async def readiness_probe():
 async def liveness_probe():
     return {"message": "Hello health-check check_redis!"}
 
-from fastapi import FastAPI, HTTPException, status
-from typing import Dict, Any
-from datetime import datetime
-
-app = FastAPI()
 
 @app.get("/check_mongo", response_model=Dict[str, Any])
 async def check_mongo():

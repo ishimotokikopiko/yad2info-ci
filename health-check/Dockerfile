@@ -4,7 +4,6 @@ WORKDIR /app
 RUN apk add gcc python3-dev musl-dev linux-headers --no-cach
 COPY . /app/
 RUN pip install poetry && poetry config virtualenvs.create false && poetry install --no-root
-#RUN pip3 install poetry && poetry install
 
 # Stage 2
 FROM base AS builder

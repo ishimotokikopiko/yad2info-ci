@@ -1,3 +1,6 @@
+[tool.poetry.dependencies]
+ng_utils = { git = "git@github.com:ishimotokikopiko/yad2info-ci.git", branch = "main" }
+
 [tool.poetry]
 name = "health-check"
 version = "0.1.0"
