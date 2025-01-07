@@ -3,6 +3,6 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "yad2info-ci"
+name = "ng_utils"
 version = "0.1.0"
 dependencies = []

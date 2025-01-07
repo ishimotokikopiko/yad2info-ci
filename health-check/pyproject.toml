@@ -11,7 +11,7 @@ fastapi = "0.115.6"
 uvicorn = "0.34.0"
 psutil = "6.1.0"
 pymongo = "4.10.1"
-ng_utils = { git = "git+ssh://git@github.com:ishimotokikopiko/yad2info-ci.git", branch = "main", file = "ng_utils/dist/yad2info_ci-0.1.0-py3-none-any.whl" }
+ng_utils = { git = "git+ssh://git@github.com:ishimotokikopiko/yad2info-ci.git", branch = "main", file = "ng_utils/dist/ng_utils-0.1.0-py3-none-any.whl" }
 
 [build-system]
 requires = ["poetry-core"]
