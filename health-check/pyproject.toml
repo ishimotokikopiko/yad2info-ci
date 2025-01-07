@@ -1,6 +1,3 @@
-[tool.poetry.dependencies]
-ng_utils = { git = "git@github.com:ishimotokikopiko/yad2info-ci.git", branch = "main" }
-
 [tool.poetry]
 name = "health-check"
 version = "0.1.0"
@@ -14,7 +11,7 @@ fastapi = "0.115.6"
 uvicorn = "0.34.0"
 psutil = "6.1.0"
 pymongo = "4.10.1"
-
+ng_utils = { git = "git+ssh://git@github.com:ishimotokikopiko/yad2info-ci.git", branch = "main" }
 
 [build-system]
 requires = ["poetry-core"]
