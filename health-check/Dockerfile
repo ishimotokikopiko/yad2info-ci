@@ -9,14 +9,6 @@ RUN apk add gcc \
     git \
     --no-cach
     
-# Add an argument for the SSH key
-ARG SSH_PRIVATE_KEY
-
-# Set up SSH configuration
-RUN mkdir -p ~/.ssh && \
-    echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa && \
-    chmod 600 ~/.ssh/id_rsa && \
-    ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
 COPY . /app/
 RUN pip install poetry && poetry config virtualenvs.create false && poetry install --no-root
