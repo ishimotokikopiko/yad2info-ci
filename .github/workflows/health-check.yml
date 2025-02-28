@@ -15,7 +15,8 @@ env:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
     environment: prd
 
     steps:
